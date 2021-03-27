@@ -16,6 +16,6 @@ aws s3 sync "$datdir" "s3://$bucket" \
        --delete \
        --no-progress >&2 
 
-for file in $datdir; do
+for file in "$datdir"/*; do
   echo "s3://$bucket/$(basename "$file")"
 done
